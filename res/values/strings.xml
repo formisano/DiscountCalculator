@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DiscountConverter</string>
+    <string name="action_settings">Settings</string>
+    <string name="preis">Preis:</string>
+	<string name="rabatt">Rabatt:</string>
+	<string name="euro">€</string>
+	<string name="prozent">%</string>
+	<string name="neu">NEU</string>
+	<string name="ok">OK</string>
+	<string name="ersparnis">Ersparnis:</string>
+	<string name="neuerpreis">neuer Preis:</string>
+	<string name="hint">z.B. 19.99</string>
+    
+
+</resources>
