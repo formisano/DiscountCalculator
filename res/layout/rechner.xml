@@ -75,7 +75,7 @@
         android:layout_marginRight="5dp"
         android:ems="10"
         android:gravity="right"
-        android:inputType="number|numberDecimal"/>
+        android:inputType="number"/>
 
     <TextView
         android:id="@+id/textViewPercent"

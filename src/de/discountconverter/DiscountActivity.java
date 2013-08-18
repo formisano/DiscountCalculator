@@ -21,13 +21,17 @@ public class DiscountActivity extends Activity  {
 	EditText preis, rabatt;
 	Button clear, ok;
 	TextView ersparnis, neuerPreis;
-	
+	public static DiscountActivity self;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.tabelle);
-		
+		setContentView(R.layout.rechner);
+		self = this;
+		init();	
+	}
+	
+	public void init(){
 		dataSource = new VerlaufDataSource(getApplicationContext());
 		
 		preis = (EditText)findViewById(id.editTextPreis);
@@ -53,12 +57,11 @@ public class DiscountActivity extends Activity  {
 		neuerPreis = (TextView)findViewById(id.textViewNeuerPreisResult);
 	}
 
-
 	public void buttonOK(){
 		
 		try {
 			
-			//holt sich Eingabe, konvertiert diese als String und parst sich den double Wert raus
+			//holt sich Eingabe und konvertiert diese als String 
 			String preisString = preis.getText().toString();
 			double preis = Double.parseDouble(preisString);
 			
@@ -66,7 +69,7 @@ public class DiscountActivity extends Activity  {
 			String rabattString = rabatt.getText().toString();
 			int rabattInt = Integer.parseInt(rabattString);
 			
-			if(preis * rabattInt == 0){
+			if(preisString.isEmpty() | rabattString.isEmpty() | preis * rabattInt == 0){
 				Toast.makeText(this, "Eine Eingabe fehlt!", Toast.LENGTH_LONG).show();
 			}
 			
@@ -112,6 +115,7 @@ public class DiscountActivity extends Activity  {
 		neuerPreis.setText("");
 		
 	}
+	
 	
 }
 
