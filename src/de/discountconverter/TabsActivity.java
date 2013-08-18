@@ -46,7 +46,6 @@ public class TabsActivity extends TabActivity{
             public void onTabChanged(String tabId) {
             	mlam.destroyActivity(tabId, true);
             	mlam.dispatchResume();
-            	
              }
 
         });

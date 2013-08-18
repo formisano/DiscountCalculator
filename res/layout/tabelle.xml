@@ -31,8 +31,7 @@
         android:ems="10"
         android:gravity="right"
         android:hint="@string/hint"
-        android:inputType="number|numberDecimal"
-        android:digits="0123456789." >
+        android:inputType="number|numberDecimal">
 
         <requestFocus />
     </EditText>
@@ -76,8 +75,7 @@
         android:layout_marginRight="5dp"
         android:ems="10"
         android:gravity="right"
-        android:inputType="number|numberDecimal"
-        android:digits="0123456789." />
+        android:inputType="number|numberDecimal"/>
 
     <TextView
         android:id="@+id/textViewPercent"
