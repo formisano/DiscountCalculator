@@ -1,5 +1,5 @@
 Math App
 ==================
-A simple discount calculator
-A simple fracture calculator
-A simple database, that saves inputs and results
+A simple discount calculator <br>
+A simple fracture calculator <br>
+A simple database, that saves inputs and results <br>
