@@ -6,7 +6,7 @@ public class Entry {
 	
 	private long id;
 	private double preis;
-	private int rabatt;
+	private double rabatt;
 	private double ersparnis;
 	private double nPreis;
 	
@@ -26,11 +26,11 @@ public class Entry {
 		this.preis = preis;
 	}
 	
-	public int getRabatt() {
+	public double getRabatt() {
 		return rabatt;
 	}
 	
-	public void setRabatt(int rabatt) {
+	public void setRabatt(double rabatt) {
 		this.rabatt = rabatt;
 	}
 	
@@ -55,12 +55,13 @@ public class Entry {
 		DecimalFormat df = new DecimalFormat("#.##");
 		
 		String s1 = df.format(preis);
-		String s2 = df.format(ersparnis);
-		String s3 = df.format(nPreis);
+		String s2 = df.format(rabatt);
+		String s3 = df.format(ersparnis);
+		String s4 = df.format(nPreis);
 		
 		return String.format("\n Preis: %s €\n"+
-				" Rabatt: %d %% \n"+
+				" Rabatt: %s %% \n"+
 				" Ersparnis: %s € \n"+
-				" neuer Preis: %s € \n ", s1, rabatt, s2, s3);	
+				" neuer Preis: %s € \n ", s1, s2, s3, s4);	
 	}
 }

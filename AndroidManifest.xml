@@ -39,6 +39,12 @@
             android:label="Verlauf">
         </activity>
         
+        
+        <activity
+            android:name="de.discountconverter.FractionActivity"
+            android:label="Bruchrechner">
+        </activity>
+        
     </application>
 
 </manifest>

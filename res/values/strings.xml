@@ -12,6 +12,13 @@
 	<string name="ersparnis">Ersparnis:</string>
 	<string name="neuerpreis">neuer Preis:</string>
 	<string name="hint">z.B. 19.99</string>
+	<string name="plus">+</string>
+	<string name="minus">-</string>
+	<string name="mal">*</string>
+	<string name="geteilt">/</string>
+	<string name="bruchstrich">-</string>
+	<string name="ergebnisBruch">Ergebnis (Bruch)</string>
+	<string name="ergebnisDezi">Ergebnis (Dezimal)</string>
     
 
 </resources>

@@ -23,24 +23,29 @@ public class TabsActivity extends TabActivity{
         
         
         TabHost tabHost = (TabHost)findViewById(id.tabhost);
-        //TabHost tabHost = getTabHost();
         tabHost.setup(mlam);
          
         // Tab for Discounter
         TabSpec rechner = tabHost.newTabSpec("Rechner");
-        rechner.setIndicator("Rabattrechner");
-        final Intent discountIntent = new Intent(this, DiscountActivity.class);
+        rechner.setIndicator("Rabatt");
+        Intent discountIntent = new Intent(this, DiscountActivity.class);
         rechner.setContent(discountIntent);
         
         // Tab for Database
         TabSpec verlauf = tabHost.newTabSpec("Verlauf");        
         verlauf.setIndicator("Verlauf");
-        
-        final Intent verlaufIntent = new Intent(this, VerlaufActivity.class);
+        Intent verlaufIntent = new Intent(this, VerlaufActivity.class);
         verlauf.setContent(verlaufIntent);
+        
+        //Tab for Fractions
+        TabSpec bruch = tabHost.newTabSpec("Bruch");
+        bruch.setIndicator("Brüche");
+        Intent bruchIntent = new Intent(this, FractionActivity.class);
+        bruch.setContent(bruchIntent);
 
         // Adding all TabSpec to TabHost
         tabHost.addTab(rechner); // Adding rechner tab
+        tabHost.addTab(bruch); //Adding bruch tab
         tabHost.addTab(verlauf); // Adding verlauf tab
         
         tabHost.setOnTabChangedListener(new OnTabChangeListener() {
@@ -48,7 +53,6 @@ public class TabsActivity extends TabActivity{
                 if(tabId.equals("Verlauf")){
                     VerlaufActivity.self.show();
                 }
-                
             }
         });
         

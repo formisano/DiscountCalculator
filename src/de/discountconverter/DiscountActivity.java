@@ -26,7 +26,7 @@ public class DiscountActivity extends Activity  {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.rechner);
+		setContentView(R.layout.rabattrechner);
 		self = this;
 		init();	
 	}
@@ -41,7 +41,7 @@ public class DiscountActivity extends Activity  {
 		clear.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				buttonClear();
+				buttonClear(); 
 			}
 		});
 		
@@ -52,6 +52,8 @@ public class DiscountActivity extends Activity  {
 				buttonOK();
 			}
 		});
+		
+		
 		
 		ersparnis = (TextView)findViewById(id.textViewErsparnisResult);
 		neuerPreis = (TextView)findViewById(id.textViewNeuerPreisResult);
@@ -67,15 +69,15 @@ public class DiscountActivity extends Activity  {
 			
 			//analog zu preis
 			String rabattString = rabatt.getText().toString();
-			int rabattInt = Integer.parseInt(rabattString);
+			double rabatt = Double.parseDouble(rabattString);
 			
-			if(preisString.isEmpty() | rabattString.isEmpty() | preis * rabattInt == 0){
+			if(preisString.isEmpty() | rabattString.isEmpty() | preis * rabatt == 0){
 				Toast.makeText(this, "Eine Eingabe fehlt!", Toast.LENGTH_LONG).show();
 			}
 			
 			DecimalFormat f = new DecimalFormat("#0.00");
 			//rundet ersparnis auf zwei Nachkommastellen
-			double ersparnisD = ((double)Math.round((preis*rabattInt/100)*100))/100;
+			double ersparnisD = ((double)Math.round((preis*rabatt/100)*100))/100;
 			double nPreis = ((double)Math.round((preis - ersparnisD)*100))/100;
 			
 			
@@ -89,7 +91,7 @@ public class DiscountActivity extends Activity  {
 		
 			//Datenbank-Eintrag
 			dataSource.open();
-			dataSource.createEntry(preis, rabattInt, ersparnisD, nPreis);
+			dataSource.createEntry(preis, rabatt, ersparnisD, nPreis);
 			dataSource.close();
 			
 				
@@ -109,10 +111,10 @@ public class DiscountActivity extends Activity  {
 		InputMethodManager input = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		input.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		
-		preis.setText("");
-		rabatt.setText("");
-		ersparnis.setText("");
-		neuerPreis.setText("");
+		preis.setText(null);
+		rabatt.setText(null);
+		ersparnis.setText(null);
+		neuerPreis.setText(null);
 		
 	}
 	

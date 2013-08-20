@@ -27,7 +27,7 @@ public class VerlaufDataSource {
 		db.close();
 	}
 	
-	public Entry createEntry(double preis, int rabatt, double ersparnis, double nPreis){
+	public Entry createEntry(double preis, double rabatt, double ersparnis, double nPreis){
 		ContentValues values = new ContentValues();
 		values.put("PREIS", preis);
 		values.put("RABATT", rabatt);
@@ -46,7 +46,7 @@ public class VerlaufDataSource {
 		Entry entry = new Entry();
 		entry.setId(cursor.getLong(0));
 		entry.setPreis(cursor.getDouble(1));
-		entry.setRabatt(cursor.getInt(2));
+		entry.setRabatt(cursor.getDouble(2));
 		entry.setErsparnis(cursor.getDouble(3));
 		entry.setNeuerPreis(cursor.getDouble(4));
 		
